@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Lover</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: rgba(236, 25, 248, 0.151);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+
+        ._50 {
+            margin-top: 50px;
+        }
+
+        input {
+            margin-left: 4px;
+            font-size: 20px;
+        }
+
+        .btn {
+            margin-left: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>💕 Find Your Lover 💕</h1>
+    <div>
+        <div class="box">
+            <input type="text" id="name1" name="name1" placeholder="Enter your name" autocomplete="off">
+            <input type="text" id="name2" name="name2" placeholder="Enter your partner" autocomplete="off">
+            <button class="btn" onclick="love()">❤️ FIND ❤️</button>
+        </div>
+    </div>
+</body>
+<script>
+    function love() {
+        let yourName = document.querySelector("#name1").value;
+        let partnerName = document.querySelector("#name2").value;
+        let count = 0;
+        let score = 0;
+        let length = yourName.length + partnerName.length;
+        for (let i = 0; i < yourName.length; i++) {
+            for (let j = 0; j < partnerName.length; j++) {
+                if (yourName[i].toLowerCase() === partnerName[j].toLowerCase()) {
+                    count = count + 2;
+                    break;
+                }
+            }
+        }
+        let newer = length - count;
+        score = newer % 6;
+        switch (score) {
+            case 0:
+                alert("You are Friends");
+                break;
+            case 1:
+                alert("You are Lovers");
+                break;
+            case 2:
+                alert("You have Affection");
+                break;
+            case 3:
+                alert("You will Married");
+                break;
+            case 4:
+                alert("You are Enemies");
+                break;
+            case 5:
+                alert("You are Secret Lovers");
+                break;
+        }
+    }
+</script>
+
+</html>
