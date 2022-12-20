@@ -35,11 +35,11 @@
         }
 
         @media only screen and (max-width: 750px) {
-        .box {
-            display: flex;
-            flex-direction: column;
-            margin: 0px;
-        }
+            .box {
+                display: flex;
+                flex-direction: column;
+                margin: 0px;
+            }
 
             input {
                 margin: 10px 20%;
@@ -60,8 +60,8 @@
 <body>
     <div class="box">
         <h1>💕 Find Your Relation Status 💕</h1>
-        <input type="text" id="name1" name="name1" placeholder="Enter your name" autocomplete="off">
-        <input type="text" id="name2" name="name2" placeholder="Enter your partner name" autocomplete="off">
+        <input type="text" id="name1" name="name1" placeholder="Enter your name" autocomplete="off" required>
+        <input type="text" id="name2" name="name2" placeholder="Enter your partner name" autocomplete="off" required>
         <button class="btn" onclick="love()">❤️ FIND ❤️</button>
     </div>
 </body>
@@ -75,6 +75,11 @@
         for (let i = 0; i < yourName.length; i++) {
             for (let j = 0; j < partnerName.length; j++) {
                 if (yourName[i].toLowerCase() === partnerName[j].toLowerCase()) {
+                    let n = yourName[i];
+                    for (let j = 0; j < yourName.length; j++) {
+                        yourName = yourName.replace(n, "@");
+                    }
+                    partnerName[j] = '';
                     count = count + 2;
                     break;
                 }
