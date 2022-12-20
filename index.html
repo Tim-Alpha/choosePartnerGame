@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Your Lover</title>
+    <title>Find Your Relation Status</title>
     <style>
         body {
             margin: 0px;
@@ -18,32 +18,51 @@
 
         .box {
             display: flex;
-            justify-content: center;
-        }
-
-        ._50 {
-            margin-top: 50px;
+            flex-direction: column;
+            margin: 0 20%;
         }
 
         input {
-            margin-left: 4px;
-            font-size: 20px;
+            margin: 10px 20%;
+            font-size: 30px;
+            border-radius: 6px;
         }
 
         .btn {
-            margin-left: 3px;
+            margin: 10px 20%;
+            font-size: 40px;
+            border-radius: 6px;
+        }
+
+        @media only screen and (max-width: 750px) {
+        .box {
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+        }
+
+            input {
+                margin: 10px 20%;
+                font-size: 20px;
+                border-radius: 4px;
+            }
+
+            .btn {
+                margin: 10px 20%;
+                font-size: 25px;
+                font-weight: 700;
+                border-radius: 6px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>💕 Find Your Lover 💕</h1>
-    <div>
-        <div class="box">
-            <input type="text" id="name1" name="name1" placeholder="Enter your name" autocomplete="off">
-            <input type="text" id="name2" name="name2" placeholder="Enter your partner" autocomplete="off">
-            <button class="btn" onclick="love()">❤️ FIND ❤️</button>
-        </div>
+    <div class="box">
+        <h1>💕 Find Your Relation Status 💕</h1>
+        <input type="text" id="name1" name="name1" placeholder="Enter your name" autocomplete="off">
+        <input type="text" id="name2" name="name2" placeholder="Enter your partner name" autocomplete="off">
+        <button class="btn" onclick="love()">❤️ FIND ❤️</button>
     </div>
 </body>
 <script>
@@ -65,22 +84,22 @@
         score = newer % 6;
         switch (score) {
             case 0:
-                alert("You are Friends");
+                alert("You are Friends 🫂🤝");
                 break;
             case 1:
-                alert("You are Lovers");
+                alert("You are Lovers 💑");
                 break;
             case 2:
-                alert("You have Affection");
+                alert("You have Affection 🥰");
                 break;
             case 3:
-                alert("You will Married");
+                alert("You will Marry 👨‍👩‍👧‍👦");
                 break;
             case 4:
-                alert("You are Enemies");
+                alert("You are Enemies 🥷");
                 break;
             case 5:
-                alert("You are Secret Lovers");
+                alert("You are Secret Lovers 😘");
                 break;
         }
     }
